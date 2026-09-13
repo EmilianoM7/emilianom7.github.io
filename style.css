@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap');
+
+:root{
+  --bg: #1c1b19;
+  --surface: #242220;
+  --line: #38352f;
+  --text: #ece7de;
+  --text-muted: #9c968a;
+  --accent: #c99a56;
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+  --radius: 4px;
+  --max-width: 1000px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header{
+  width: 100%;
+  max-width: var(--max-width);
+  padding: var(--space-5) var(--space-3) var(--space-3);
+  text-align: center;
+}
+
+header h1{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 6vw, 2.75rem);
+  margin: 0 0 var(--space-1);
+  letter-spacing: -0.01em;
+}
+
+header p{
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+nav{
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 0 var(--space-3);
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--line);
+}
+
+nav .tabs{
+  display: flex;
+  gap: var(--space-4);
+}
+
+nav button{
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: var(--space-2) 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+nav button:hover{
+  color: var(--text);
+}
+
+nav button.active{
+  color: var(--accent);
+}
+
+nav button.active::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--accent);
+}
+
+nav button:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+main{
+  width: 100%;
+  max-width: var(--max-width);
+  padding: var(--space-5) var(--space-3);
+  flex: 1;
+}
+
+section{
+  display: none;
+}
+
+section.active{
+  display: block;
+}
+
+section h2{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin: 0 0 var(--space-3);
+}
+
+section lbl{
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+section p{
+  color: var(--text-muted);
+  margin: 0 0 var(--space-2);
+}
+
+.avatar{
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto var(--space-3);
+  border: 1px solid var(--line);
+}
+
+.project{
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  gap: var(--space-2);
+  align-items: flex-start;
+}
+
+.project img{
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.project-body{
+  flex: 1;
+  min-width: 0;
+}
+
+.icon{
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+}
+
+.project:last-child{
+  border-bottom: none;
+}
+
+.project h3{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 0 var(--space-1);
+}
+
+.project p{
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.contact-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li{
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-list li:last-child{
+  border-bottom: none;
+}
+
+.contact-list a{
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.contact-list a:hover{
+  color: var(--accent);
+}
+
+.contact-list span{
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+
+footer{
+  width: 100%;
+  max-width: var(--max-width);
+  padding: var(--space-3);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 480px){
+  nav .tabs{
+    gap: var(--space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  nav button{
+    transition: none;
+  }
+}
