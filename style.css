@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+@font-face{
+  font-family: 'Varela';
+  src: url('fonts/varela.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root{
   --bg: #1c1b19;
@@ -7,7 +16,7 @@
   --text: #ece7de;
   --text-muted: #9c968a;
   --accent: #c99a56;
-  --font-display: 'Fraunces', serif;
+  --font-display: 'Varela', sans-serif;
   --font-body: 'Inter', sans-serif;
   --radius: 4px;
   --max-width: 1000px;
@@ -140,8 +149,8 @@ section p{
 }
 
 .avatar{
-  width: 96px;
-  height: 96px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   object-fit: cover;
   display: block;
