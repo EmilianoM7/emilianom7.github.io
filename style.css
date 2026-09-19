@@ -10,12 +10,13 @@
 }
 
 :root{
-  --bg: #1c1b19;
+  --bg: #0e0e0e;
   --surface: #242220;
-  --line: #38352f;
-  --text: #ece7de;
-  --text-muted: #9c968a;
-  --accent: #c99a56;
+  --line: #777777;
+  --text: #e1e1e1;
+  --text-muted: #a0a0a0;
+  --text-muted2: #72d2ff;
+  --accent: #72d2ff;
   --font-display: 'Varela', sans-serif;
   --font-body: 'Inter', sans-serif;
   --radius: 4px;
@@ -140,7 +141,7 @@ section h2{
 
 section lbl{
   font-size: 0.9rem;
-  color: var(--accent);
+  color: var(--text-muted2);
 }
 
 section p{
@@ -153,7 +154,7 @@ section p{
   height: 128px;
   border-radius: 50%;
   object-fit: cover;
-  display: block;
+  
   margin: 0 auto var(--space-3);
   border: 1px solid var(--line);
 }
